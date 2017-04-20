@@ -24,3 +24,6 @@ C:\Users\Bart Roos\Dropbox\Radius\_Project FIFA\ProjectFifaV2\ProjectFifaV2\obj\
 C:\Users\Bart Roos\Dropbox\Radius\_Project FIFA\ProjectFifaV2\ProjectFifaV2\bin\Debug\db.mdf
 C:\Users\Bart Roos\Dropbox\Radius\_Project FIFA\ProjectFifaV2\ProjectFifaV2\bin\Debug\db_log.ldf
 C:\Users\Bart Roos\Dropbox\Radius\_Project FIFA\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
+C:\wamp\www\project_fifa\documentatie\20170405 PR FIFA Opzet CS-app\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
+C:\wamp\www\project_fifa\documentatie\20170405 PR FIFA Opzet CS-app\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
+C:\wamp\www\project_fifa\documentatie\20170405 PR FIFA Opzet CS-app\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
