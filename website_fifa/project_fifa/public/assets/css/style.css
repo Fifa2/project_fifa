@@ -20,4 +20,33 @@
 }
 .header h1 {
     margin: 15px 10px;
+    color: #FFF;
+}
+.header {
+    background: #88ce6f;
+    padding: 40px 0;
+}
+.header ul li a{
+    color: #FFF;
+    text-decoration: none;
+}
+.header ul {
+    margin-top: 10px;
+    list-style-type: none;
+}
+.header ul li a:visited {
+    color: #FFF;
+}
+/*==============================footer============================*/
+footer {
+    background:#88ce6f;
+    color: #FFF;
+}
+footer ul li a{
+    color: #FFF;
+    text-decoration: none;
+    margin: 15px 10px 15px 0;
+}
+footer ul{
+    list-style-type: none;
 }
