@@ -1,0 +1,23 @@
+/*==============================general============================*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 900px;
+    margin: 0 auto;
+}
+.row-spaced {
+    display: flex;
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+}
+/*==============================header============================*/
+.header li{
+    margin: 15px 10px;
+}
+.header h1 {
+    margin: 15px 10px;
+}

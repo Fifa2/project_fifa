@@ -10,3 +10,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<div class="wrapper">
+    <div class="header">
+        <div class="container row-spaced">
+            <h1>FIFA</h1>
+                <ul class="row-spaced">
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link2</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link4</a></li>
+                </ul>
+        </div>
+    </div>
