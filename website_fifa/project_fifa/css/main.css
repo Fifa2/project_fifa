@@ -137,6 +137,20 @@ textarea {
 .header ul li a:visited {
     color: #FFF;
 }
+/*==============================header============================*/
+.bgibanner {
+    background-image: url(../img/banner_image.jpg);
+    background-position:center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 380px 0 250px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 /*==============================footer============================*/
 footer {
     background:#40A03f;

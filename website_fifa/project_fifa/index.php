@@ -21,22 +21,15 @@
 
         <!-- Add your site or application content here -->
         <?php require(realpath(__DIR__) . '/templates/header.php');
-        require ('../app/database.php')?>
+        require ('app/database.php')?>
 
         <div class="main-content">
-            <div class="container">
-                <ul>
-                    <?php
-                    $sql = "SELECT * FROM tbl_teams ";
-                    $items = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
-                    foreach ($items as $item)
-                    {
-                        $name = $item['name'];
-                        echo '<ul>' . $name . '</ul>';
-                    }
-                    ?>
-                </ul>
+            <div class="bgibanner">
+                    <div class="container">
+                        <div class="bannerquote">
+                            <h2>FIFA 2</h2>
+                        </div>
+                    </div>
             </div>
         </div>
 
