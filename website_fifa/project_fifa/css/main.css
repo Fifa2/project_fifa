@@ -112,6 +112,9 @@ textarea {
     display: flex;
 }
 /*==============================header============================*/
+.header{
+    position: fixed;
+}
 .header li{
     margin: 15px 10px;
 }
