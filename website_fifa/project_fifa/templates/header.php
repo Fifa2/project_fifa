@@ -18,15 +18,13 @@
 <body>
 <div class="wrapper">
     <div class="header">
-        <div class="container">
-            <div class="header-wrapper row-spaced fixed">
-                <h1>FIFA</h1>
-                <ul class="row-spaced">
-                    <li><a href="#">Link1</a></li>
-                    <li><a href="#">Link2</a></li>
-                    <li><a href="#">Link3</a></li>
-                    <li><a href="#">Link4</a></li>
-                </ul>
-            </div>
+        <div class="container row-spaced">
+            <h1>FIFA</h1>
+            <ul class="row-spaced">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+                <li><a href="#">Link4</a></li>
+            </ul>
         </div>
     </div>

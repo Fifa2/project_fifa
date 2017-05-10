@@ -111,10 +111,6 @@ textarea {
 .flex{
     display: flex;
 }
-.fixed{
-    position:fixed;
-    width:100%;
-}
 /*==============================header============================*/
 .header li{
     margin: 15px 10px;
@@ -124,10 +120,12 @@ textarea {
     color: #FFF;
     letter-spacing: 3px;
 }
-.header-wrapper{
+.header{
     background: #40A03F;
     opacity: 0.8;
     border-radius: 0 0 12px 12px;
+    position: fixed;
+    width: 100%;
 }
 .header ul li a{
     color: #FFF;
@@ -141,20 +139,23 @@ textarea {
 .header ul li a:visited {
     color: #FFF;
 }
-/*==============================header============================*/
-.bgibanner {
-    background-image: url(../img/banner_image.jpg);
-}
-.bannerquote{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.bannerquote h2{
-    padding:45% 45%;
-}
+
+
+/*==============================Banner============================*/ 
+.bgibanner { 
+    background-image: url(../img/banner_image.jpg); 
+} 
+.bannerquote{ 
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+.bannerquote h2{ 
+    padding:45% 45%; 
+} 
 /*==============================footer============================*/
 footer {
+    margin-top: 2000px;
     background:#40A03f;
     color: #FFF;
 }
