@@ -20,7 +20,28 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <?php require(realpath(__DIR__) . '/templates/header.php');
+        require ('../app/database.php')?>
+
+        <div class="main-content">
+            <div class="container">
+                <ul>
+                    <?php
+                    $sql = "SELECT * FROM tbl_teams ";
+                    $items = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($items as $item)
+                    {
+                        $name = $item['name'];
+                        echo '<ul>' . $name . '</ul>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+<?php require(realpath(__DIR__) . '/templates/footer.php');
+?>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
