@@ -19,7 +19,7 @@
 <div class="wrapper">
     <div class="header">
         <div class="container">
-            <div class="header-wrapper row-spaced">
+            <div class="header-wrapper row-spaced fixed">
                 <h1>FIFA</h1>
                 <ul class="row-spaced">
                     <li><a href="#">Link1</a></li>

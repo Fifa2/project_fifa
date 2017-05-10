@@ -101,7 +101,7 @@ textarea {
     font-family: 'Lato', sans-serif;
 }
 .container{
-    width: 900px;
+    width: 60%;
     margin: 0 auto;
 }
 .row-spaced {
@@ -111,10 +111,11 @@ textarea {
 .flex{
     display: flex;
 }
-/*==============================header============================*/
-.header{
-    position: fixed;
+.fixed{
+    position:fixed;
+    width:100%;
 }
+/*==============================header============================*/
 .header li{
     margin: 15px 10px;
 }
@@ -143,16 +144,14 @@ textarea {
 /*==============================header============================*/
 .bgibanner {
     background-image: url(../img/banner_image.jpg);
-    background-position:center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 380px 0 250px 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
+}
+.bannerquote{
+    display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+}
+.bannerquote h2{
+    padding:45% 45%;
 }
 /*==============================footer============================*/
 footer {
