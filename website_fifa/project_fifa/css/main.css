@@ -117,7 +117,7 @@ textarea {
 }
 .header h1 {
     margin: 15px 10px;
-    color: #FFF;
+    color: #FFFFFF;
     letter-spacing: 3px;
 }
 .header{
@@ -137,7 +137,7 @@ textarea {
     list-style-type: none;
 }
 .header ul li a:visited {
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 
@@ -157,10 +157,10 @@ textarea {
 footer {
     margin-top: 2000px;
     background:#40A03f;
-    color: #FFF;
+    color: #FFFFFF;
 }
 footer ul li a{
-    color: #FFF;
+    color: #FFFFFF;
     text-decoration: none;
     margin: 15px 10px 15px 0;
 }

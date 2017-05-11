@@ -33,6 +33,8 @@
             </div>
         </div>
 
+
+       
 <?php require(realpath(__DIR__) . '/templates/footer.php');
 ?>
 
