@@ -155,7 +155,7 @@ textarea {
 } 
 /*==============================footer============================*/
 footer {
-    margin-top: 2000px;
+    margin-top: 1000px;
     background:#40A03f;
     color: #FFFFFF;
 }
@@ -166,6 +166,10 @@ footer ul li a{
 }
 footer ul{
     list-style-type: none;
+}
+/*==============================Admin============================*/
+.admin-panel{
+    padding: 80px 0px;
 }
 /* ==========================================================================
    Helper classes

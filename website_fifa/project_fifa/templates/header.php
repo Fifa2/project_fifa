@@ -21,10 +21,10 @@
         <div class="container row-spaced">
             <h1>FIFA</h1>
             <ul class="row-spaced">
-                <li><a href="#">Link1</a></li>
-                <li><a href="#">Link2</a></li>
-                <li><a href="#">Link3</a></li>
-                <li><a href="./admin/admin.php">Admin</a></li>
+                <li><a href="../public/home.php">Home</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Rankings</a></li>
+                <li><a href="../admin/admin.php">Admin</a></li>
             </ul>
         </div>
     </div>
