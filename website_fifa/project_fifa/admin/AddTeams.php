@@ -8,10 +8,10 @@ require ('../app/database.php')?>
 		<div class="banner">
 			<div class="container">
 				<div class="form">
-					<form action="teamhandler.php">
+					<form action="teamhandler.php" method="POST" >
 					<p>Insert Team Name:</p>
 						<input type="text" name="TeamName" checked>
-						<input type="submit" value="Team invoeren">	
+						<input type="submit" value="TeamName">
 					</form>
 					<p>Insert Player Name:</p>
 					<form action="playerhandler.php">
