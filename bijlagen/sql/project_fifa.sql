@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 apr 2017 om 11:24
--- Serverversie: 10.1.21-MariaDB
--- PHP-versie: 5.6.30
+-- Gegenereerd op: 19 mei 2017 om 07:19
+-- Serverversie: 5.7.14
+-- PHP-versie: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_fifa`
 --
-CREATE DATABASE IF NOT EXISTS `project_fifa` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `project_fifa`;
 
 -- --------------------------------------------------------
 
@@ -74,6 +72,16 @@ INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_na
 (6, 'd987665', 2, 'Siem', 'de Jong', '2017-04-13 09:48:23', NULL),
 (7, 'd11555', 2, 'Jeroen', 'Zoet', '2017-04-13 09:48:23', NULL),
 (8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `tbl_poolnumber`
+--
+
+CREATE TABLE `tbl_poolnumber` (
+  `LastAssignedPoolNumber` int(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -161,7 +169,7 @@ ALTER TABLE `tbl_players`
 -- AUTO_INCREMENT voor een tabel `tbl_poules`
 --
 ALTER TABLE `tbl_poules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_teams`
 --
