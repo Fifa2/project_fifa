@@ -17,7 +17,7 @@ class Teams
     function __construct($name,$poolID)
     {
         $this->name = $name;
-        //$this->poolID = $poolID;
+        $this->poolID = $poolID;
         $this->points = 0;
         $this->exists = true;
     }
