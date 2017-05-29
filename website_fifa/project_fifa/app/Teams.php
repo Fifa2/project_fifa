@@ -24,16 +24,16 @@ class Teams
 
 
 
-    //AddTeams();
-    function AddTeams()
+    //AddTeam();
+    function AddTeam()
     {
 
     }
 
-    //DeleteTeams();
-    function DeleteTeams()
+    //DeleteTeam();
+    function DeleteTeam()
     {
-
+        $sql = "INSERT INTO tbl_teams "
     }
 
 }
