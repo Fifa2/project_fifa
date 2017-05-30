@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 mei 2017 om 07:19
+-- Gegenereerd op: 30 mei 2017 om 18:26
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -52,7 +52,7 @@ INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `scor
 CREATE TABLE `tbl_players` (
   `id` int(11) UNSIGNED NOT NULL,
   `student_id` varchar(10) NOT NULL,
-  `team_id` int(11) UNSIGNED NOT NULL,
+  `team_id` int(11) UNSIGNED DEFAULT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -71,17 +71,28 @@ INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_na
 (5, 'd74745', 2, 'Luuk', 'de Jong', '2017-04-13 09:48:23', NULL),
 (6, 'd987665', 2, 'Siem', 'de Jong', '2017-04-13 09:48:23', NULL),
 (7, 'd11555', 2, 'Jeroen', 'Zoet', '2017-04-13 09:48:23', NULL),
-(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL);
+(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL),
+(11, 'd231057', NULL, 'Sjoerd', 'Hoeven', '2017-05-30 16:17:58', NULL),
+(12, 'd222222', NULL, 'Pieter Jan', 'Kolijn', '2017-05-30 16:19:30', NULL),
+(13, 'd333333', NULL, 'CornÃ©', 'Sierat', '2017-05-30 16:30:32', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tbl_poolnumber`
+-- Tabelstructuur voor tabel `tbl_poulenumber`
 --
 
-CREATE TABLE `tbl_poolnumber` (
-  `LastAssignedPoolNumber` int(1) NOT NULL DEFAULT '1'
+CREATE TABLE `tbl_poulenumber` (
+  `id` int(11) NOT NULL,
+  `poulenumber` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tbl_poulenumber`
+--
+
+INSERT INTO `tbl_poulenumber` (`id`, `poulenumber`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +116,9 @@ CREATE TABLE `tbl_poules` (
 CREATE TABLE `tbl_teams` (
   `id` int(11) UNSIGNED NOT NULL,
   `poule_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `teamname` varchar(255) NOT NULL,
+  `points` int(255) DEFAULT NULL,
+  `doesexist` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -114,9 +127,17 @@ CREATE TABLE `tbl_teams` (
 -- Gegevens worden geëxporteerd voor tabel `tbl_teams`
 --
 
-INSERT INTO `tbl_teams` (`id`, `poule_id`, `name`, `created_at`, `deleted_at`) VALUES
-(1, 1, 'Ajax', '2017-04-13 09:42:45', NULL),
-(2, 1, 'PSV', '2017-04-13 09:42:45', NULL);
+INSERT INTO `tbl_teams` (`id`, `poule_id`, `teamname`, `points`, `doesexist`, `created_at`, `deleted_at`) VALUES
+(1, 1, 'Ajax', NULL, 1, '2017-04-13 09:42:45', NULL),
+(2, 1, 'PSV', NULL, 1, '2017-04-13 09:42:45', NULL),
+(3, 1, 'Feyenoord', NULL, 1, '2017-05-04 11:08:12', NULL),
+(4, 1, 'Vitesse', NULL, 1, '2017-05-04 11:08:12', NULL),
+(5, 1, 'bla', 0, 1, '2017-05-30 15:15:12', NULL),
+(6, 1, 'NAC Breda', 0, 1, '2017-05-30 15:15:36', NULL),
+(23, 1, 'poul1', 0, 1, '2017-05-30 16:51:24', NULL),
+(24, 2, 'poul2', 0, 1, '2017-05-30 16:51:31', NULL),
+(25, 3, 'poul3', 0, 1, '2017-05-30 16:51:36', NULL),
+(26, 4, 'poul4', 0, 1, '2017-05-30 16:51:40', NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -138,6 +159,12 @@ ALTER TABLE `tbl_players`
   ADD KEY `team_id` (`team_id`);
 
 --
+-- Indexen voor tabel `tbl_poulenumber`
+--
+ALTER TABLE `tbl_poulenumber`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `tbl_poules`
 --
 ALTER TABLE `tbl_poules`
@@ -149,7 +176,7 @@ ALTER TABLE `tbl_poules`
 --
 ALTER TABLE `tbl_teams`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD UNIQUE KEY `name` (`teamname`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -164,7 +191,12 @@ ALTER TABLE `tbl_matches`
 -- AUTO_INCREMENT voor een tabel `tbl_players`
 --
 ALTER TABLE `tbl_players`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT voor een tabel `tbl_poulenumber`
+--
+ALTER TABLE `tbl_poulenumber`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_poules`
 --
@@ -174,7 +206,7 @@ ALTER TABLE `tbl_poules`
 -- AUTO_INCREMENT voor een tabel `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
