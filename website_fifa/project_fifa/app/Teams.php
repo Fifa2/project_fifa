@@ -1,39 +1,31 @@
 <?php
-
-
 namespace project_fifa;
-
-    require 'database.php';
-
 class Teams
-
-
 {
-    protected $name;
+    protected $teamName;
     protected $poolID;
     protected $points;
-    protected $exists;
+    protected $doesExist;
 
     function __construct($name,$poolID)
     {
-        $this->name = $name;
+        $this->teamName = $name;
         $this->poolID = $poolID;
         $this->points = 0;
-        $this->exists = true;
+        $this->doesExist = true;
     }
-
-
-
-    //AddTeam();
-    function AddTeam()
+    //AddTeams();
+    function AddTeams()
+    {
+        global $db;
+        require_once '../app/database.php';
+        $sql = "INSERT INTO tbl_teams (poule_id, teamname, points, doesexist) VALUES ('$this->poolID', '$this->teamName', '$this->points', '$this->doesExist')";
+        $db->query($sql);
+    }
+    //DeleteTeams();
+    function DeleteTeams()
     {
 
-    }
-
-    //DeleteTeam();
-    function DeleteTeam()
-    {
-        $sql = "INSERT INTO tbl_teams "
     }
 
 }

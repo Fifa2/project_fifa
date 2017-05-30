@@ -7,17 +7,34 @@ require ('../app/database.php')?>
 		</div>
 		<div class="banner">
 			<div class="container">
-				<div class="form">
-					<form action="teamhandler.php" method="POST" >
-					<p>Insert Team Name:</p>
-						<input type="text" name="teamname" checked>
-						<input type="submit" value="teamname">
-					</form>
-					<p>Insert Player Name:</p>
-					<form action="playerhandler.php">
-						<input type="text" name="PlayerName" checked>
-						<input type="submit" value="Speler invoeren">
-					</form>
+				<div class="row-spaced">
+                    <div class="add-team">
+                        <h2>Add Team</h2>
+                        <form action="teamhandler.php" method="POST" >
+                            <input type="text" name="teamname" checked>
+                            <input type="submit" value="teamname">
+                        </form>
+                    </div>
+                    <div class="add-player">
+                        <h2>Add Player:</h2>
+                        <form action="playerhandler.php" method="POST">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <input type="text" name="firstname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" name="lastname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">Student ID</label>
+                                <input type="text" name="firstname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
 				</div>
 			</div>
 		</div>

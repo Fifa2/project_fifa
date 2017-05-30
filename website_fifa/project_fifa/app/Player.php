@@ -26,7 +26,10 @@ class Player
 }
     protected function AddPlayer()
     {
-
+        global $db;
+        require_once '../app/database.php';
+        $sql = "INSERT INTO tbl_players (poule_id, teamname, points, doesexist) VALUES ('$this->poolID', '$this->teamName', '$this->points', '$this->doesExist')";
+        $db->query($sql);
     }
     protected function DeletePlayer()
     {
