@@ -6,26 +6,18 @@ require('../app/Player.php');
 // geef team pool ID
 // team insert team = new team
 // insert naam ->  add team
-if(isset($_POST['playername']) && !empty($_POST['playername']))
+if(isset($_POST['firstname']) && !empty($_POST['firstname']) && isset($_POST['lastname']) && !empty($_POST['lastname']) && isset($_POST['studentid']) && !empty($_POST['studentid']))
 {
-    $playername = $_POST['playername'];
-    //checken wat pool id is
-    $sql = "SELECT poulenumber FROM tbl_poulenumber WHERE id = 1";
-    $poulenumber = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
-    var_dump($poulenumber);
-
-    $poulenumber = (int) $poulenumber[0]['poulenumber'];
-
-    var_dump($poulenumber);
-    var_dump($poulenumber);
-
-    $player = new \project_fifa\Player($teamname, $poulenumber);
-
-    var_dump($team);
-    $team->AddTeams();
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $studentid = $_POST['studentid'];
+    $player = new \project_fifa\Player($studentid, $firstname, $lastname);
+    var_dump($player);
+    $player->AddPlayer();
+    header("Location: AddTeams.php");
 }
 else {
-    header("Location: AddTeams.php");
+//    header("Location: AddTeams.php");
+    echo "nee";
 }
 ?>

@@ -11,27 +11,24 @@ namespace project_fifa;
 
 class Player
 {
-    protected $idPlayer;
     protected $idStudent;
-    protected $idTeam;
+//    protected $idTeam;
     protected $firstname;
     protected $lastname;
 
-    function __construct($idPlayer,$idStudent,$idTeam,$firstname,$lastname) {
-        $this->idPlayer = $idPlayer;
+    function __construct($idStudent,$firstname,$lastname) {
         $this->idStudent = $idStudent;
-        $this->idTeam = $idTeam;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
 }
-    protected function AddPlayer()
+    function AddPlayer()
     {
         global $db;
         require_once '../app/database.php';
-        $sql = "INSERT INTO tbl_players (poule_id, teamname, points, doesexist) VALUES ('$this->poolID', '$this->teamName', '$this->points', '$this->doesExist')";
+        $sql = "INSERT INTO tbl_players (student_id, first_name, last_name) VALUES ('$this->idStudent', '$this->firstname', '$this->lastname')";
         $db->query($sql);
     }
-    protected function DeletePlayer()
+    function DeletePlayer()
     {
         
     }

@@ -21,6 +21,7 @@ class Teams
         require_once '../app/database.php';
         $sql = "INSERT INTO tbl_teams (poule_id, teamname, points, doesexist) VALUES ('$this->poolID', '$this->teamName', '$this->points', '$this->doesExist')";
         $db->query($sql);
+//        return true;
     }
     //DeleteTeams();
     function DeleteTeams()

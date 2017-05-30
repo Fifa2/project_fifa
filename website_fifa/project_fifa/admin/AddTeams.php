@@ -27,8 +27,8 @@ require ('../app/database.php')?>
                                 <input type="text" name="lastname" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="firstname">Student ID</label>
-                                <input type="text" name="firstname" class="form-control" required>
+                                <label for="studentid">Student ID</label>
+                                <input type="text" name="studentid" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary">
