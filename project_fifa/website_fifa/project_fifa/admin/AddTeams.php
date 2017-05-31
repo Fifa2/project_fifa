@@ -1,5 +1,8 @@
 <?php require(realpath(__DIR__) . '/../templates/header.php');
-require ('../app/database.php')?>
+require ('../app/database.php');
+require('../app/Teams.php');
+require('../app/utility.php');
+?>
 		<div class="admin-panel">
 			<div class="container">
 				<h1>FIFA DEV Edition</h1>
@@ -7,17 +10,40 @@ require ('../app/database.php')?>
 		</div>
 		<div class="banner">
 			<div class="container">
-				<div class="form">
-					<form action="teamhandler.php">
-					<p>Insert Team Name:</p>
-						<input type="text" name="TeamName" checked>
-						<input type="submit" value="Team invoeren">	
-					</form>
-					<p>Insert Player Name:</p>
-					<form action="playerhandler.php">
-						<input type="text" name="PlayerName" checked>
-						<input type="submit" value="Speler invoeren">
-					</form>
+				<div class="row-spaced">
+                    <div class="add-team">
+                        <h2>Add Team</h2>
+                        <form action="teamhandler.php" method="POST" >
+                            <input type="text" name="teamname" checked>
+                            <input type="submit" value="teamname">
+                        </form>
+                        <table class="table">
+                            <?php
+                            $utility = new \project_fifa\utility();
+                            $utility->DisplayTeams();
+                            ?>
+                        </table>
+                    </div>
+                    <div class="add-player">
+                        <h2>Add Player:</h2>
+                        <form action="playerhandler.php" method="POST">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <input type="text" name="firstname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" name="lastname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentid">Student ID</label>
+                                <input type="text" name="studentid" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
 				</div>
 			</div>
 		</div>
