@@ -55,7 +55,7 @@ class utility
         echo"
         <table class='table'>
             <tr>
-                <th>Teaam ID</th>
+                <th>Team ID</th>
                 <th>Team Name</th>
                 <th>Poule Number</th>
             </tr>";
@@ -78,6 +78,23 @@ class utility
         require_once '../app/database.php';
         $sql = "SELECT * FROM tbl_teams where poule_id = $pouleid";
         $items = $db->query($sql)->fetchAll();
-        
+        echo"
+        <table class='table'>
+            <tr>
+                <th>Rank</th>
+                <th>Team Name</th>
+                <th>Points</th>
+            </tr>";
+        foreach ($items as $item)
+        {
+            $id = $item['id'];
+            $teamname = $item['teamname'];
+            $points = $item['points'];
+            echo '<tr>
+                <td>' . $id . '</td>
+                <td>' . $teamname .'</td>
+                <td>' . $points . '</td> </tr>';
+        }
+        echo "</table>";
     }
 }

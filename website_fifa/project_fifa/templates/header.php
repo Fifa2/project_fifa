@@ -23,6 +23,7 @@
             <ul class="flex">
                 <li><a href="../public/home.php">Home</a></li>
                 <li><a href="#">Schedule</a></li>
+                <li><a href="../public/poules.php">Poules</a></li>
                 <li><a href="#">Rankings</a></li>
                 <li><a href="../admin/admin.php">Admin</a></li>
             </ul>
