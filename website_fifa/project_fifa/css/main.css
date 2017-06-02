@@ -115,6 +115,9 @@ textarea {
     display: flex;
     justify-content:space-around;
 }
+.greenborder {
+    border-top: 2px solid #40A03f;
+}
 /*==============================header============================*/
 .header li{
     margin: 15px 10px;
@@ -174,6 +177,10 @@ footer ul{
 /*==============================Admin============================*/
 .admin-panel{
     padding: 80px 0px;
+}
+/*==============================Addteamsbottom============================*/
+.addteamsbottom {
+
 }
 /* ==========================================================================
    Helper classes

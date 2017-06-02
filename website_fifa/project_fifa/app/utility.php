@@ -52,5 +52,32 @@ class utility
         require_once '../app/database.php';
         $sql = "SELECT * FROM tbl_teams";
         $items = $db->query($sql)->fetchAll();
+        echo"
+        <table class='table'>
+            <tr>
+                <th>Teaam ID</th>
+                <th>Team Name</th>
+                <th>Poule Number</th>
+            </tr>";
+        foreach ($items as $item)
+        {
+            $id = $item['id'];
+            $teamname = $item['teamname'];
+            $pouleid = $item['poule_id'];
+            echo '<tr>
+                <td>' . $id . '</td>
+                <td>' . $teamname .'</td>
+                <td>' . $pouleid . '</td> </tr>';
+        }
+        echo "</table>";
+    }
+
+    function DisplayPoule($pouleid)
+    {
+        global $db;
+        require_once '../app/database.php';
+        $sql = "SELECT * FROM tbl_teams where poule_id = $pouleid";
+        $items = $db->query($sql)->fetchAll();
+        
     }
 }
