@@ -17,7 +17,7 @@ class utility
     {
     }
 
-    function DisplayTeams()
+    function DisplayPlayers()
     {
         global $db;
         require_once '../app/database.php';
@@ -46,12 +46,11 @@ class utility
 
     }
 
-    function DisplayPlayers()
+    function DisplayTeams()
     {
         global $db;
         require_once '../app/database.php';
-        $sql = "SELECT * FROM tbl_players";
+        $sql = "SELECT * FROM tbl_teams";
         $items = $db->query($sql)->fetchAll();
-
     }
 }

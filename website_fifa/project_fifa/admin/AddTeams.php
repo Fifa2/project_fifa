@@ -41,6 +41,10 @@ require('../app/utility.php');
                                 <input type="submit" class="btn btn-primary">
                             </div>
                         </form>
+                        <?php
+                        $utility = new \project_fifa\utility();
+                        $utility->DisplayPlayers();
+                        ?>
                     </div>
 				</div>
 			</div>
