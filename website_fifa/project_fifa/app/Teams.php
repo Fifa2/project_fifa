@@ -28,9 +28,34 @@ class Teams
         global $db;
         require_once '../app/database.php';
         $sql = "SELECT tbl_players.id, tbl_players.first_name, tbl_players.last_name FROM tbl_users INNER JOIN tbl_teams ON tbl_players.team_id = tbl_teams.id";
-        $db->query($sql);
+        $items = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "";
+        foreach ($items as $item)
+        {
+            $id = $item['id'];
+            $firstname = $item['first_name'];
+            $lastname = $item['last_name'];
+            $ingredienten = $item['ingredienten'];
+            $foto = $item['foto'];
+
+
+            echo '<tr>
+                <td>' . $firstname .'</td>
+                <td>' .$lastname. '</td>
+                <td>' .id. '</td>
+                ';
+//            if($item['foto']== null)
+//            {
+//                echo '<td><img src="http://placehold.it/350x150" alt="foto"></td>';
+//            }
+//            else
+//            {
+//                echo '<td><img src="../img/' .$foto. '" alt="recept foto"></td>';
+//            }
+//
+//
+//            echo '</tr>';
+        }
     }
     //DeleteTeams();
     function DeleteTeams()

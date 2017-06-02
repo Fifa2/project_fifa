@@ -1,5 +1,8 @@
 <?php require(realpath(__DIR__) . '/../templates/header.php');
-require ('../app/database.php')?>
+require ('../app/database.php');
+require('../app/Teams.php');
+require('../app/utility.php');
+?>
 		<div class="admin-panel">
 			<div class="container">
 				<h1>FIFA DEV Edition</h1>
@@ -14,6 +17,10 @@ require ('../app/database.php')?>
                             <input type="text" name="teamname" checked>
                             <input type="submit" value="teamname">
                         </form>
+                        <?php
+                        $utility = new \project_fifa\utility();
+                        $utility->DisplayTeams();
+                        ?>
                     </div>
                     <div class="add-player">
                         <h2>Add Player:</h2>

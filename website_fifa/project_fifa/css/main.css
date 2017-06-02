@@ -111,6 +111,10 @@ textarea {
 .flex{
     display: flex;
 }
+.space-around {
+    display: flex;
+    justify-content:space-around;
+}
 /*==============================header============================*/
 .header li{
     margin: 15px 10px;

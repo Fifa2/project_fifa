@@ -1,6 +1,7 @@
 <?php
 require('../app/database.php');
 require('../app/Player.php');
+require('../app/utility.php');
 
 // kijken of de data aanwezig is
 // geef team pool ID

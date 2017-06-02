@@ -25,6 +25,7 @@ if(isset($_POST['teamname']) && !empty($_POST['teamname']))
     }
     $sql = "UPDATE tbl_poulenumber SET poulenumber = '$poulenumber'";
     $db->query($sql);
+    header("Location: AddTeams.php");
 
 }
 else {
