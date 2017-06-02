@@ -14,7 +14,7 @@ $utility = new \project_fifa\utility();
         </div>
         <div class="poule">
             <h3>Poule 3</h3>
-            <?php $utility->DisplayPoule(2);?>
+            <?php $utility->DisplayPoule(3);?>
         </div>
         <div class="poule">
             <h3>Poule 4</h3>
