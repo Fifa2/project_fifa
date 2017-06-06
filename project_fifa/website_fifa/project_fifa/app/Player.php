@@ -32,4 +32,11 @@ class Player
     {
         
     }
+
+    function AssignTeam($playerid,$teamid)
+    {
+     global $db;
+     require_once '../app/database.php';
+     $sql = "UPDATE tbl_players SET team_id = $playerid where team_id = $teamid";
+    }
 }

@@ -1,10 +1,10 @@
 <footer>
     <div class="container row-spaced">
         <ul class="row-spaced">
-            <li><a href="#">link1</a></li>
-            <li><a href="#">link2</a></li>
-            <li><a href="#">link3</a></li>
-            <li><a href="#">link4</a></li>
+            <li><a href="../public/home.php">Home</a></li>
+            <li><a href="#">Schedule2</a></li>
+            <li><a href="#">Rankings</a></li>
+            <li><a href="../admin/admin.php">Admins</a></li>
         </ul>
         <p>Dreamteam Design &copy;</p>
     </div>

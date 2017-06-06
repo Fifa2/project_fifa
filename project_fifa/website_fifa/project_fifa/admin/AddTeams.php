@@ -8,21 +8,24 @@ require('../app/utility.php');
 				<h1>FIFA DEV Edition</h1>
 			</div>
 		</div>
-		<div class="banner">
+		<div class="forms">
 			<div class="container">
 				<div class="row-spaced">
-                    <div class="add-team">
-                        <h2>Add Team</h2>
+                    <div class="add-player">
+                        <h2>Add Team:</h2>
                         <form action="teamhandler.php" method="POST" >
-                            <input type="text" name="teamname" checked>
-                            <input type="submit" value="teamname">
+                            <div class="form-group">
+                                <label for="teamname">Team Name</label>
+                                <input type="text" name="teamname"class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
                         </form>
-                        <table class="table">
-                            <?php
-                            $utility = new \project_fifa\utility();
-                            $utility->DisplayTeams();
-                            ?>
-                        </table>
+<!--                        --><?php
+//                        $utility = new \project_fifa\utility();
+//                        $utility->DisplayTeams();
+//                        ?>
                     </div>
                     <div class="add-player">
                         <h2>Add Player:</h2>
@@ -43,9 +46,32 @@ require('../app/utility.php');
                                 <input type="submit" class="btn btn-primary">
                             </div>
                         </form>
+<!--                        --><?php
+//                        $utility = new \project_fifa\utility();
+//                        $utility->DisplayPlayers();
+//                        ?>
                     </div>
 				</div>
 			</div>
 		</div>
+<div class="addteamsbottom">
+    <div class="container row-spaced greenborder">
+        <?php
+        echo "<div class='teams'>
+        <h3>Teams</h3>";
+        $utility = new \project_fifa\utility();
+        $utility->DisplayTeams();
+        echo "</div>";
+        ?>
+        <?php
+        echo "<div class='players'>
+        <h3>Players</h3>";
+        $utility = new \project_fifa\utility();
+        $utility->DisplayPlayers();
+        echo "</div>"
+        ?>
+    </div>
+</div>
+
 <?php require(realpath(__DIR__) . '/../templates/footer.php');
 ?>
