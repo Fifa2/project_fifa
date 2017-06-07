@@ -79,7 +79,6 @@ namespace ProjectFifaV2
         public SqlConnection GetCon()
         {
             return con;
-
         }
     }
 }
