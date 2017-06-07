@@ -55,3 +55,6 @@ C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\Projec
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csproj.GenerateResource.Cache
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
+C:\wamp64\www\Periode 4 project\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
+C:\wamp64\www\Periode 4 project\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
+C:\wamp64\www\Periode 4 project\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
