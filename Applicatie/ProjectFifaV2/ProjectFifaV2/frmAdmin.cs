@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace ProjectFifaV2
 {
@@ -14,6 +15,7 @@ namespace ProjectFifaV2
     {
         private DatabaseHandler dbh;
         private OpenFileDialog opfd;
+        private string path;
 
         DataTable table;
 
@@ -52,8 +54,8 @@ namespace ProjectFifaV2
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             txtPath.Text = null;
-            
-            string path = GetFilePath();
+
+            this.path = GetFilePath();
 
             if (CheckExtension(path, "csv"))
             {
@@ -67,10 +69,108 @@ namespace ProjectFifaV2
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
+            string[] tables = new string[3];
+            tables[0] = "[tblGames]";
+            tables[1] = "[tblPlayers]";
+            tables[2] = "[tblTeams]";
             if (!(txtPath.Text == null))
             {
-                dbh.OpenConnectionToDB();
 
+                dbh.OpenConnectionToDB();
+                DialogResult result = MessageBox.Show("Are you sure you want to clear the database?", "Clear database", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
+                {
+                    DataTable hometable = dbh.FillDT("DELETE FROM [tblGames];");
+                    dbh.FillDT("DELETE FROM [tblPlayers];");
+                    dbh.FillDT("DELETE FROM [tblTeams];");
+                    using (var fs = File.OpenRead(path))
+                    using (var reader = new StreamReader(fs))
+                    {
+                        string[] values = new string[0];
+                        int number = 0;
+                        List<string> numbers = new List<string>();
+                        List<string> valueList;
+                        for (int i = -1; i < tables.Length;)
+                        {
+                            while (!reader.EndOfStream)
+                            {
+                                //split the lines for proper values
+                                string line = reader.ReadLine();
+                                values = line.Split(',', ';', '"');
+                                valueList = new List<string>(values);
+
+                                //remove any whitespaces
+                                for (int j = 0; j < values.Count(); j++)
+                                {
+                                    valueList.Remove("");
+                                }
+                                numbers = new List<string>(valueList.Count());
+                                //change values from csv to integers if possible
+                                for (int j = 0; j < valueList.Count(); j++)
+                                {
+                                    if (int.TryParse(valueList[j], out number))
+                                        numbers.Add(number.ToString());
+                                    else if (valueList[j] == "NULL")
+                                    {
+                                        valueList[j] = 0.ToString();
+                                        numbers.Add(valueList[j]);
+                                    }
+                                    else
+                                        numbers.Add(valueList[j]);
+                                }
+                                //check if the value starts with this stringvalue then switch database
+                                if (valueList[0].StartsWith("1") || reader.EndOfStream)
+                                {
+                                    i++;
+                                }
+                                break;
+                            }
+                            if (i == 0)
+                            {
+                                using (SqlCommand cmd = new SqlCommand("INSERT INTO [tblGames] ([HomeTeam], [AwayTeam], [HomeTeamScore], [AwayTeamScore]) VALUES (@HomeTeam, @AwayTeam, @HomeTeamScore, @AwayTeamScore)"))
+                                {
+                                    //parameters for tblGames
+                                    cmd.Parameters.AddWithValue("HomeTeam", numbers[1]);
+                                    cmd.Parameters.AddWithValue("AwayTeam", numbers[2]);
+                                    cmd.Parameters.AddWithValue("HomeTeamScore", numbers[3]);
+                                    cmd.Parameters.AddWithValue("AwayTeamScore", numbers[4]);
+                                    dbh.OpenConnectionToDB();
+                                    cmd.Connection = dbh.GetCon();
+                                    cmd.ExecuteNonQuery();
+                                    dbh.CloseConnectionToDB();
+                                }
+                            }
+                            if (i == 1)
+                            {
+                                using (SqlCommand cmd = new SqlCommand("INSERT INTO [tblPlayers] ([Name], [Surname], [GoalsScored], [Team_id]) VALUES (@name, @surname, @goalsScored, @teamID)"))
+                                {
+                                    //parameters for tblPlayers
+                                    cmd.Parameters.AddWithValue("name", numbers[3]);
+                                    cmd.Parameters.AddWithValue("surname", numbers[4]);
+                                    cmd.Parameters.AddWithValue("goalsScored", 0);
+                                    cmd.Parameters.AddWithValue("teamID", numbers[2]);
+                                    dbh.OpenConnectionToDB();
+                                    cmd.Connection = dbh.GetCon();
+                                    cmd.ExecuteNonQuery();
+                                    dbh.CloseConnectionToDB();
+                                }
+                            }
+                            if (i == 2 || i == 3)
+                            {
+                                using (SqlCommand cmd = new SqlCommand("INSERT INTO [tblTeams] ([Team_id], [TeamName]) VALUES (@TeamID, @TeamName)"))
+                                {
+                                    //parameters for tblTeams
+                                    cmd.Parameters.AddWithValue("TeamID", numbers[0]);
+                                    cmd.Parameters.AddWithValue("TeamName", numbers[2]);
+                                    dbh.OpenConnectionToDB();
+                                    cmd.Connection = dbh.GetCon();
+                                    cmd.ExecuteNonQuery();
+                                    dbh.CloseConnectionToDB();
+                                }
+                            }
+                        }
+                    }
+                }
                 dbh.CloseConnectionToDB();
             }
             else
@@ -78,7 +178,7 @@ namespace ProjectFifaV2
                 MessageHandler.ShowMessage("No filename selected.");
             }
         }
-        
+
         private string GetFilePath()
         {
             string filePath = "";
@@ -99,16 +199,7 @@ namespace ProjectFifaV2
             int extensionLength = extension.Length;
             int strLength = fileString.Length;
 
-            string ext = "";
-            if (ext == "")
-            {
-                ext = "/";
-            }
-            else
-            {
-               ext = fileString.Substring(strLength - extensionLength, extensionLength);
-            }
-
+            string ext = fileString.Substring(strLength - extensionLength, extensionLength);
 
             if (ext == extension)
             {
