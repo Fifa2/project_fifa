@@ -97,6 +97,7 @@
     <Compile Include="frmRanking.designer.cs">
       <DependentUpon>frmRanking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="MessageHandler.cs" />
     <Compile Include="Payout.cs" />
     <Compile Include="Player.cs" />
