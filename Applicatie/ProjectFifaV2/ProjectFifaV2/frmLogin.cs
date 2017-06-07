@@ -23,7 +23,6 @@ namespace ProjectFifaV2
             dbh = new DatabaseHandler();
             frmAdmin = new frmAdmin();
             frmRanking = new frmRanking();
-            //frmPlayer = new frmPlayer(frmRanking);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
