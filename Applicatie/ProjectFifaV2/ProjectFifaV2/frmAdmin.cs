@@ -99,7 +99,16 @@ namespace ProjectFifaV2
             int extensionLength = extension.Length;
             int strLength = fileString.Length;
 
-            string ext = fileString.Substring(strLength - extensionLength, extensionLength);
+            string ext = "";
+            if (ext == "")
+            {
+                ext = "/";
+            }
+            else
+            {
+               ext = fileString.Substring(strLength - extensionLength, extensionLength);
+            }
+
 
             if (ext == extension)
             {

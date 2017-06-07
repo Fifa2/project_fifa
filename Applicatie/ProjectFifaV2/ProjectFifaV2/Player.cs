@@ -36,7 +36,7 @@ namespace ProjectFifaV2
             else
             {
                 betAmount = 0;
-                MessageBox.Show("you dont have enough money to make the bet.\n please try a lower bet");
+                MessageBox.Show("You dont have enough money to make the bet.\n Please try a lower bet.");
             }
         }
     }
