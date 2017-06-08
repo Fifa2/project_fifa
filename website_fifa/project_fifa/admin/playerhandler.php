@@ -12,7 +12,7 @@ if(isset($_POST['firstname']) && !empty($_POST['firstname']) && isset($_POST['la
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $studentid = $_POST['studentid'];
-    $player = new \project_fifa\Player($studentid, $firstname, $lastname);
+    $player = new \project_fifa\Player($studentid, $firstname, $lastname    );
     var_dump($player);
     $player->AddPlayer();
     header("Location: AddTeams.php");

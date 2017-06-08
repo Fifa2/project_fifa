@@ -81,7 +81,6 @@ class utility
         echo"
         <table class='table'>
             <tr>
-                <th>Rank</th>
                 <th>Team Name</th>
                 <th>Points</th>
             </tr>";
@@ -91,10 +90,26 @@ class utility
             $teamname = $item['teamname'];
             $points = $item['points'];
             echo '<tr>
-                <td>' . $id . '</td>
                 <td>' . $teamname .'</td>
                 <td>' . $points . '</td> </tr>';
         }
         echo "</table>";
+    }
+    function selectPlayer($playernumber)
+    {
+        global $db;
+        require_once '../app/database.php';
+        $sql = "SELECT * FROM tbl_players";
+        $items = $db->query($sql)->fetchAll();
+
+        echo '<select class="form-control" name="' . $playernumber . '">';
+        foreach ($items as $item)
+        {
+            $id = $item['id'];
+            $firstname = $item['first_name'];
+            $lastname = $item['last_name'];
+            echo '<option value=' . $id . '>' . $firstname . $lastname  . '</option>';
+        }
+        echo "</select>";
     }
 }
