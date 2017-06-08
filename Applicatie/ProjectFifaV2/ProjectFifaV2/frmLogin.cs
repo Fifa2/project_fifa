@@ -22,12 +22,8 @@ namespace ProjectFifaV2
             InitializeComponent();
             dbh = new DatabaseHandler();
             frmAdmin = new frmAdmin();
-<<<<<<< Updated upstream
             frmRanking = new frmRanking();
-=======
             frmRanking = new frmRanking();
-
->>>>>>> Stashed changes
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
