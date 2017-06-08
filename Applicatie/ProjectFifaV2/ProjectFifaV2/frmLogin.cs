@@ -22,7 +22,12 @@ namespace ProjectFifaV2
             InitializeComponent();
             dbh = new DatabaseHandler();
             frmAdmin = new frmAdmin();
+<<<<<<< Updated upstream
             frmRanking = new frmRanking();
+=======
+            frmRanking = new frmRanking();
+
+>>>>>>> Stashed changes
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -78,7 +83,7 @@ namespace ProjectFifaV2
 
         private void btnShowRanking_Click(object sender, EventArgs e)
         {
-            frmRanking.Show(); 
+            frmRanking.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -98,7 +103,7 @@ namespace ProjectFifaV2
                 cmd.Parameters.AddWithValue("Username", username);
                 cmd.Parameters.AddWithValue("Password", password);
                 exist = (int)cmd.ExecuteScalar() > 0;
-            }           
+            }
 
             if (exist)
             {
@@ -118,7 +123,7 @@ namespace ProjectFifaV2
                 {
                     frmPlayer = new frmPlayer(frmRanking, username);
                     frmPlayer.Show();
-                    //frmPlayer.Show();
+
                 }
             }
             else

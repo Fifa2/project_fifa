@@ -2,42 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ProjectFifaV2
 {
-    class Player:User
+    class Player
     {
-        protected int amountOfMoney;
-        protected bool hasWon;
+        private int playerId;
+        private string playerFirstname;
+        private string PlayerLastname;
+        private int goalsScored;
+        private int teamId;
 
-        public Player(int predictions, int amountOfMoney, bool hasWon, string password, string username)
-            :base(password,username)
+        public Player(int playerId, string playerFirstname, string playerLastname, int teamId, int goalsScored)
         {
-            this.amountOfMoney = amountOfMoney;
-            this.hasWon = hasWon;
+            this.playerId = playerId;
+            this.playerFirstname = playerFirstname;
+            this.PlayerLastname = playerLastname;
+            this.teamId = teamId;
+            this.goalsScored = goalsScored;
         }
 
-        public int GetAmountOfMoney()
+        public void Goal(Player player)
         {
-            return amountOfMoney;
+            this.goalsScored++;
         }
-        public void SetAmountOfMoney(int amountOfMoney)
+
+        public int GetPlayerId()
         {
-           this.amountOfMoney = amountOfMoney;
+            return this.playerId;
         }
-        public void bet(int betAmount)
+        public string GetPlayerFirstname()
         {
-            if (amountOfMoney < betAmount)
-            {
-                Payout payout = new Payout();
-                payout.SetBet(betAmount);
-            }
-            else
-            {
-                betAmount = 0;
-                MessageBox.Show("You dont have enough money to make the bet.\n Please try a lower bet.");
-            }
+            return this.playerFirstname;
+        }
+        public string GetPlayerLastname()
+        {
+            return this.PlayerLastname;
+        }
+        public int GetGoalsScored()
+        {
+            return this.goalsScored;
+        }
+        public int GetTeamId()
+        {
+            return this.teamId;
         }
     }
 }

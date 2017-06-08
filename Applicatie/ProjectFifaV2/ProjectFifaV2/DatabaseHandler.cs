@@ -28,14 +28,14 @@ namespace ProjectFifaV2
         public void TestConnection()
         {
             bool open = false;
-            
+
             try
             {
                 con.Open();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -70,7 +70,7 @@ namespace ProjectFifaV2
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, GetCon());
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
-            
+
             CloseConnectionToDB();
 
             return dt;

@@ -15,7 +15,7 @@ namespace ProjectFifaV2
         private DatabaseHandler dbh;
         private string userName;
 
-        List<TextBox> txtBoxList;
+        //List<TextBox> txtBoxList;
 
         public frmPlayer(Form frm, string un)
         {
@@ -56,7 +56,7 @@ namespace ProjectFifaV2
         private bool DisableEditButton()
         {
             bool hasPassed;
-            //This is the deadline for filling in the predictions
+
             DateTime deadline = new DateTime(2014, 06, 12);
             DateTime curTime = DateTime.Now;
             int result = DateTime.Compare(deadline, curTime);
@@ -109,7 +109,7 @@ namespace ProjectFifaV2
             {
                 DataRow dataRowHome = hometable.Rows[i];
                 DataRow dataRowAway = awayTable.Rows[i];
-                
+
                 Label lblHomeTeam = new Label();
                 Label lblAwayTeam = new Label();
                 TextBox txtHomePred = new TextBox();
@@ -136,17 +136,17 @@ namespace ProjectFifaV2
                 pnlPredCard.Controls.Add(txtHomePred);
                 pnlPredCard.Controls.Add(txtAwayPred);
                 pnlPredCard.Controls.Add(lblAwayTeam);
-                //ListViewItem lstItem = new ListViewItem(dataRowHome["TeamName"].ToString());
-                //lstItem.SubItems.Add(dataRowHome["HomeTeamScore"].ToString());
-                //lstItem.SubItems.Add(dataRowAway["AwayTeamScore"].ToString());
-                //lstItem.SubItems.Add(dataRowAway["TeamName"].ToString());
-                //lvOverview.Items.Add(lstItem);
             }
         }
 
         internal void GetUsername(string un)
         {
             userName = un;
+        }
+
+        private void lvOverview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
