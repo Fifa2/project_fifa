@@ -12,3 +12,17 @@ C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\Projec
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csproj.GenerateResource.Cache
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\db.mdf
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\db_log.ldf
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.pdb
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csprojResolveAssemblyReference.cache
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmAdmin.resources
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmLogin.resources
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmPlayer.resources
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmRanking.resources
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.Properties.Resources.resources
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csproj.GenerateResource.Cache
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
+C:\wamp64\www\project_fifa2\Applicatie\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
