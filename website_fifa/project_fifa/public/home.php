@@ -1,16 +1,56 @@
  <?php require(realpath(__DIR__) . '/../templates/header.php');
  require('../app/database.php') ?>
 
-        <div class="main-content">
-            <div class="bgibanner">
-                    <div class="container">
-                        <div class="bannerquote">
-                            <h2>FIFA 2</h2>
-                        </div>
-                    </div>
-            </div>
-        </div>
- .
+ <div class="main-content">
+     <div class="bgibanner">
+         <div class="container">
+             <div class="bannerquote">
+                 <h2>FIFA2</h2>
+             </div>
+         </div>
+     </div>
+ </div>
+ <div class="login-register">
+     <div class="container row-spaced pt">
+         <div class="login whiteborder">
+             <h3>Login</h3>
+             <form action="../app/loginhandler.php">
+                 <div class="form-group">
+                     <label for="username">Username</label>
+                     <input type="text" name="username" class="form-control" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="password">Password</label>
+                     <input type="password" name="password" class="form-control" required>
+                 </div>
+                 <div class="form-group">
+                     <input type="submit" class="form-control green">
+                 </div>
+             </form>
+         </div>
+         <div class="register whiteborder">
+             <h3>Register</h3>
+             <form action="../app/loginhandler.php">
+                 <div class="form-group">
+                     <label for="username">Username</label>
+                     <input type="text" name="username" class="form-control" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="password">Password</label>
+                     <input type="password" name="password" class="form-control" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="email">E-mail</label>
+                     <input type="text" name="email" class="form-control" required>
+                 </div>
+                 <div class="form-group">
+                     <input type="submit" class="form-control green">
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+
 
 
 

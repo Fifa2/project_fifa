@@ -1,20 +1,20 @@
 <footer>
-    <div class="container row-spaced">
-        <ul class="row-spaced">
+    <div class="container row-spaced whiteborder pt">
+        <ul class=row-spaced>
             <li><a href="../public/home.php">Home</a></li>
-            <li><a href="#">Schedule2</a></li>
-            <li><a href="#">Rankings</a></li>
-            <li><a href="../admin/admin.php">Admins</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="../public/poules.php">Poules</a></li>
+            <li><a href="../admin/admin.php">Admin</a></li>
         </ul>
-        <p>Dreamteam Design &copy;</p>
-    </div>
-    <div class="container row-spaced">
-        <ul>
-            <li>Sjoerd Hoeven</li>
-            <li>Pieter Jan Kolijn</li>
-            <li>Dennis Pulles</li>
-            <li>Corné Sierat</li>
-        </ul>
+        <div class="row-spaced">
+            <ul>
+                <li>FIFA2 Design &copy;</li>
+                <li class="whiteborder">Sjoerd Hoeven</li>
+                <li>Pieter Jan Kolijn</li>
+                <li>Dennis Pulles</li>
+                <li>Corné Sierat</li>
+            </ul>
+        </div>
     </div>
 </footer>
 </div>
