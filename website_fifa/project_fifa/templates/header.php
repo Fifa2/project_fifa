@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,6 +28,11 @@
                 <li><a href="#">Schedule</a></li>
                 <li><a href="../public/poules.php">Poules</a></li>
                 <li><a href="../admin/admin.php">Admin</a></li>
+                <?php
+                if (!empty ($_SESSION['loggedIn'])){
+                    echo '<li><a href="../app/logout.php">Logout</a></li>';
+                }
+                ?>
             </ul>
         </div>
     </div>

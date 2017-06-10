@@ -116,7 +116,7 @@ textarea {
     justify-content:space-around;
 }
 .greenborder {
-    border-top: 2px solid #40A03f;
+    border-top: 2px solid #7da36b;
 }
 .whiteborder{
     border-top: 1px solid #FFFFFF;
@@ -125,7 +125,7 @@ textarea {
     padding: 50px 0;
 }
 .green{
-    background: #40A03f;
+    background: #7da36b;
     color: #FFFFFF;
 }
 /*==============================header============================*/
@@ -138,7 +138,7 @@ textarea {
     letter-spacing: 3px;
 }
 .header{
-    background: #40A03F;
+    background: #7da36b;
     opacity: 0.8;
     border-radius: 0 0 12px 12px;
     position: fixed;
@@ -165,18 +165,27 @@ textarea {
 .bannerquote{ 
     display:flex; 
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
 } 
+.bannerquote mark {
+    color: #FFFFFF;
+    background: #7da36b;
+    border-radius: 12px;
+    opacity: 0.95;
+}
 .bannerquote h2{ 
     padding:40% 40%;
-    color: #40A03f;
-    font-size: 2.7em;
-    letter-spacing: 4px;
+    color: #FFFFFF;
+    font-size: 4.2em;
+    letter-spacing: 7px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FFFFFF;
+    font-weight: bolder;
 } 
 /*==============================footer============================*/
 footer {
     /*margin-top: 1000px;*/
-    background:#40A03f;
+    background:#7da36b;
     color: #FFFFFF;
 }
 footer ul li a{
@@ -195,7 +204,7 @@ footer ul{
 .poule {
     padding: 3%;
     margin-top: 10%;
-    border: 1px solid #40A03f;
+    border: 1px solid #7da36b;
     border-radius: 10px;
 }
 .poule h3 {
@@ -205,8 +214,35 @@ footer ul{
 /*==============================login============================*/
 .login-register {
     font-family: 'Lato', sans-serif;
-    background: #40A03f;
+    background: #7da36b;
     color: #FFFFFF;
+}
+/*==============================animation============================*/
+.animated {
+    background-image: url(/css/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-top:95px;
+    margin-bottom:60px;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
 }
 /* ==========================================================================
    Helper classes
