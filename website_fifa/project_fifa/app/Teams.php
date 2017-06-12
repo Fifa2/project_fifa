@@ -7,7 +7,6 @@ class Teams
     protected $points;
     protected $doesExist;
 
-
     function __construct($name,$poolID)
     {
         $this->teamName = $name;
@@ -63,6 +62,5 @@ class Teams
     {
 
     }
-
 
 }

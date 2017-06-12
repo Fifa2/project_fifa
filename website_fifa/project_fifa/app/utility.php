@@ -111,44 +111,5 @@ class utility
             echo '<option value=' . $id . '>' . $firstname . $lastname  . '</option>';
         }
         echo "</select>";
-
-
-    }
-    function loginCheck()
-    {
-        if (!empty ($_SESSION['loggedIn'])){
-            header("Location: ../public/home.php");
-        }
-
-    }
-    function displayTeam()
-    {
-        global $db;
-        require_once '../app/database.php';
-        $sql = "SELECT tbl_players.id, tbl_players.first_name, tbl_players.last_name,tbl_teams.teamname, tbl_players.goals FROM tbl_players INNER JOIN tbl_teams ON tbl_players.team_id = tbl_teams.id";
-        $items = $db->query($sql)->fetchAll();
-        foreach ($items as $item)
-        {
-            $teamname = $item['teamname'];
-            echo '<h1>' . $teamname . '</h1>';
-            echo"
-        <table class='table'>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Goals scored</th>
-                
-            </tr>";
-
-            $id = $item['id'];
-            $firstname = $item['first_name'];
-            $lastname = $item['last_name'];
-            $goals = $item['goals'];
-            echo '<tr>
-                <td>' . $firstname . '</td>
-                <td>' . $lastname .'</td>
-                <td>' . $goals . '</td> </tr>';
-            echo "</table>";
-        }
     }
 }
