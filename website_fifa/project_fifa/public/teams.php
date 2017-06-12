@@ -1,6 +1,7 @@
 <?php require(realpath(__DIR__) . '/../templates/header.php');
 require('../app/utility.php');
 $utility = new \project_fifa\utility();
+$utility->loginCheck()
 ?>
 <div class="team-display">
     <div class="container">

@@ -111,6 +111,15 @@ class utility
             echo '<option value=' . $id . '>' . $firstname . $lastname  . '</option>';
         }
         echo "</select>";
+
+
+    }
+    function loginCheck()
+    {
+        if (!empty ($_SESSION['loggedIn'])){
+            header("Location: ../public/home.php");
+        }
+
     }
     function displayTeam()
     {
