@@ -247,6 +247,29 @@ footer ul{
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
+/*==============================setup============================*/
+.setup-items {
+    background: #7da36b;
+    text-align: center;
+}
+.setup-items p {
+    color: #FFFFFF;
+    margin: 20px;
+    width: 30%;
+}
+.setup-items h2,h3 {
+    color: #FFFFFF;
+    margin: 40px 0;
+    width: 30%;
+}
+.setup-items a {
+    background: #FFFFFF;
+    border-radius: 15px;
+    color: #7da36b;
+    height: 50px;
+    width: 100px;
+    vertical-align: middle;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
