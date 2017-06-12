@@ -17,17 +17,18 @@ class matches
     protected $scoreTeamA;
     protected $scoreTeamB;
 
-    function __construct()
+    function __construct($matchID,$idTeamA,$idTeamB,$scoreTeamA,$scoreTeamB)
     {
-
+        $this->matchID = $matchID;
+        $this->idTeamA = $idTeamA;
+        $this->idTeamB = $idTeamB;
+        $this->scoreTeamA = $scoreTeamA;
+        $this->scoreTeamB = $scoreTeamB;
     }
 
-    function AddMatch($idTeamA,$idTeamB)
+    function AddMatch()
     {
-        global $db;
-        require_once '../app/database.php';
-        $sql = "INSERT INTO tbl_matches (team_id_a, team_id_b) VALUES ($idTeamA, $idTeamB)";
-        $db->query($sql);
+//        add code here plz
     }
 
     function EditMatch()

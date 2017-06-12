@@ -163,9 +163,10 @@ textarea {
     background-image: url(../img/banner_image.jpg); 
 } 
 .bannerquote{ 
-    display:flex; 
-    justify-content: center; 
-    align-items: center;
+    /*display:flex; */
+    /*justify-content: center; */
+    /*align-items: center;*/
+    /*text-align:;*/
 } 
 .bannerquote mark {
     color: #FFFFFF;
@@ -201,11 +202,16 @@ footer ul{
     padding: 80px 0px;
 }
 /*==============================Addteamsbottom============================*/
+.pouledisplay{
+    background: #7da36b;
+    color: #000000;
+    padding: 10% 0;
+}
 .poule {
-    padding: 3%;
     margin-top: 10%;
-    border: 1px solid #7da36b;
-    border-radius: 10px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 3%;
 }
 .poule h3 {
     text-align: center;
@@ -219,11 +225,8 @@ footer ul{
 }
 /*==============================animation============================*/
 .animated {
-    background-image: url(/css/images/logo.png);
-    background-repeat: no-repeat;
-    background-position: left top;
-    padding-top:95px;
-    margin-bottom:60px;
+    /*padding-top:95px;*/
+    /*margin-bottom:60px;*/
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
@@ -243,29 +246,6 @@ footer ul{
 .fadeIn {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
-}
-/*==============================setup============================*/
-.setup-items {
-    background: #7da36b;
-    text-align: center;
-}
-.setup-items p {
-     color: #FFFFFF;
-     margin: 20px;
-     width: 30%;
- }
-.setup-items h2,h3 {
-    color: #FFFFFF;
-    margin: 40px 0;
-    width: 30%;
-}
-.setup-items a {
-    background: #FFFFFF;
-    border-radius: 15px;
-    color: #7da36b;
-    height: 50px;
-    width: 100px;
-    vertical-align: middle;
 }
 /* ==========================================================================
    Helper classes

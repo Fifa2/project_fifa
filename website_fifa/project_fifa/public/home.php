@@ -1,11 +1,16 @@
  <?php require(realpath(__DIR__) . '/../templates/header.php');
- require('../app/database.php') ?>
+ require('../app/database.php');
+ require('../app/utility.php');
+ $utility = new \project_fifa\utility();
+ $utility->loginCheck()
+
+ ?>
 
  <div class="main-content">
      <div class="bgibanner">
          <div class="container">
              <div class="bannerquote pt">
-                 <h2 class="animated fadeIn"><mark>FIFA2</mark></h2>
+                 <h2><mark class="animated fadeIn">FIFA2</mark></h2>
              </div>
          </div>
      </div>
