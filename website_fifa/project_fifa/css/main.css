@@ -108,6 +108,11 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
+.center {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
 .flex{
     display: flex;
 }
@@ -122,7 +127,7 @@ textarea {
     border-top: 1px solid #FFFFFF;
 }
 .pt {
-    padding: 50px 0;
+    padding: 80px 0;
 }
 .green{
     background: #7da36b;
@@ -206,7 +211,7 @@ footer ul{
 }
 /*==============================Admin============================*/
 .admin-panel{
-    padding: 80px 0px;
+    padding: 80px 0;
 }
 /*==============================Addteamsbottom============================*/
 .pouledisplay{
@@ -221,6 +226,7 @@ footer ul{
     padding: 3%;
 }
 .poule h3 {
+    color: #000000;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -258,9 +264,9 @@ footer ul{
 .setup-items {
     background: #7da36b;
     text-align: center;
-    margin-botttom: 5px;
     border-right: 1px solid #FFFFFF;
     padding-right: 5px;
+    margin: 0 auto;
 }
 .setup-items p {
     color: #FFFFFF;
@@ -274,14 +280,19 @@ footer ul{
 }
 .setup-items a {
     margin-top: 35px;
-    padding-top: 20px;
+    padding: 12px 0;
     font-size: 18px;
     background: #FFFFFF;
     border-radius: 15px;
     color: #7da36b;
     height: 50px;
     width: 100px;
+    display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
+}
+.setup-items a:visited{
+    color: #7da36b;
 }
 /* ==========================================================================
    Helper classes
