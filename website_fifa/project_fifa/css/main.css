@@ -136,6 +136,7 @@ textarea {
     margin: 15px 10px;
     color: #FFFFFF;
     letter-spacing: 3px;
+    
 }
 .header{
     background: #7da36b;
@@ -154,6 +155,12 @@ textarea {
     list-style-type: none;
 }
 .header ul li a:visited {
+    color: #FFFFFF;
+}
+.header h1 a {
+    text-decoration: none;
+}
+.header h1 a:visited{
     color: #FFFFFF;
 }
 
