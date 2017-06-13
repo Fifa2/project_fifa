@@ -258,6 +258,9 @@ footer ul{
 .setup-items {
     background: #7da36b;
     text-align: center;
+    margin-botttom: 5px;
+    border-right: 1px solid #FFFFFF;
+    padding-right: 5px;
 }
 .setup-items p {
     color: #FFFFFF;
@@ -270,6 +273,9 @@ footer ul{
     width: 30%;
 }
 .setup-items a {
+    margin-top: 35px;
+    padding-top: 20px;
+    font-size: 18px;
     background: #FFFFFF;
     border-radius: 15px;
     color: #7da36b;
