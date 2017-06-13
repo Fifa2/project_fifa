@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 mei 2017 om 18:26
+-- Gegenereerd op: 13 jun 2017 om 12:20
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -32,7 +32,7 @@ CREATE TABLE `tbl_matches` (
   `team_id_b` int(10) UNSIGNED NOT NULL,
   `score_team_a` int(10) UNSIGNED DEFAULT NULL,
   `score_team_b` int(10) UNSIGNED DEFAULT NULL,
-  `start_time` datetime NOT NULL
+  `start_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
@@ -40,8 +40,24 @@ CREATE TABLE `tbl_matches` (
 --
 
 INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`) VALUES
-(1, 1, 2, 2, 4, '2017-04-13 18:00:00'),
-(2, 2, 1, NULL, NULL, '2017-05-04 00:00:00');
+(63, 39, 47, NULL, NULL, NULL),
+(64, 43, 51, NULL, NULL, NULL),
+(65, 39, 43, NULL, NULL, NULL),
+(66, 51, 47, NULL, NULL, NULL),
+(67, 39, 51, NULL, NULL, NULL),
+(68, 47, 43, NULL, NULL, NULL),
+(69, 40, 48, NULL, NULL, NULL),
+(70, 44, 52, NULL, NULL, NULL),
+(71, 40, 44, NULL, NULL, NULL),
+(72, 52, 48, NULL, NULL, NULL),
+(73, 40, 52, NULL, NULL, NULL),
+(74, 48, 44, NULL, NULL, NULL),
+(75, 41, 49, NULL, NULL, NULL),
+(76, 45, 53, NULL, NULL, NULL),
+(77, 41, 45, NULL, NULL, NULL),
+(78, 53, 49, NULL, NULL, NULL),
+(79, 41, 53, NULL, NULL, NULL),
+(80, 49, 45, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -52,9 +68,10 @@ INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `scor
 CREATE TABLE `tbl_players` (
   `id` int(11) UNSIGNED NOT NULL,
   `student_id` varchar(10) NOT NULL,
-  `team_id` int(11) UNSIGNED DEFAULT NULL,
+  `team_id` int(11) UNSIGNED DEFAULT '1',
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
+  `goals` int(10) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -63,18 +80,21 @@ CREATE TABLE `tbl_players` (
 -- Gegevens worden geëxporteerd voor tabel `tbl_players`
 --
 
-INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_name`, `created_at`, `deleted_at`) VALUES
-(1, 'd123456', 1, 'Lasse', 'Schöne', '2017-04-13 09:44:13', NULL),
-(2, 'd5435435', 1, 'Davy ', 'Klaassen', '2017-04-13 09:44:13', NULL),
-(3, 'd545454', 1, 'Hakim ', 'Ziyech', '2017-04-13 09:45:47', NULL),
-(4, 'd666555', 1, 'Kasper', 'Dolberg', '2017-04-13 09:45:47', NULL),
-(5, 'd74745', 2, 'Luuk', 'de Jong', '2017-04-13 09:48:23', NULL),
-(6, 'd987665', 2, 'Siem', 'de Jong', '2017-04-13 09:48:23', NULL),
-(7, 'd11555', 2, 'Jeroen', 'Zoet', '2017-04-13 09:48:23', NULL),
-(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL),
-(11, 'd231057', NULL, 'Sjoerd', 'Hoeven', '2017-05-30 16:17:58', NULL),
-(12, 'd222222', NULL, 'Pieter Jan', 'Kolijn', '2017-05-30 16:19:30', NULL),
-(13, 'd333333', NULL, 'CornÃ©', 'Sierat', '2017-05-30 16:30:32', NULL);
+INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_name`, `goals`, `created_at`, `deleted_at`) VALUES
+(1, 'd123456', 1, 'Lasse', 'Schöne', 0, '2017-04-13 09:44:13', NULL),
+(2, 'd5435435', 1, 'Davy ', 'Klaassen', 0, '2017-04-13 09:44:13', NULL),
+(3, 'd545454', 1, 'Hakim ', 'Ziyech', 0, '2017-04-13 09:45:47', NULL),
+(4, 'd666555', 1, 'Kasper', 'Dolberg', 0, '2017-04-13 09:45:47', NULL),
+(5, 'd74745', 1, 'Luuk', 'de Jong', 0, '2017-04-13 09:48:23', NULL),
+(6, 'd987665', 1, 'Siem', 'de Jong', 0, '2017-04-13 09:48:23', NULL),
+(7, 'd11555', 1, 'Jeroen', 'Zoet', 0, '2017-04-13 09:48:23', NULL),
+(8, 'd544566', 1, 'Hector', 'Moreno', 0, '2017-04-13 09:48:23', NULL),
+(11, 'd231057', 1, 'Sjoerd', 'Hoeven', 0, '2017-05-30 16:17:58', NULL),
+(12, 'd222222', 1, 'Pieter Jan', 'Kolijn', 0, '2017-05-30 16:19:30', NULL),
+(13, 'd333333', 1, 'CornÃ©', 'Sierat', 0, '2017-05-30 16:30:32', NULL),
+(14, 'd222242', 1, 'Dennis', 'Pulles', 0, '2017-05-31 16:04:11', NULL),
+(15, 'd22212', 1, 'voor', 'achter', 0, '2017-06-02 11:56:55', NULL),
+(16, 'd121123', 1, 'Leonel', 'Messi', 0, '2017-06-02 11:58:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,16 +148,46 @@ CREATE TABLE `tbl_teams` (
 --
 
 INSERT INTO `tbl_teams` (`id`, `poule_id`, `teamname`, `points`, `doesexist`, `created_at`, `deleted_at`) VALUES
-(1, 1, 'Ajax', NULL, 1, '2017-04-13 09:42:45', NULL),
-(2, 1, 'PSV', NULL, 1, '2017-04-13 09:42:45', NULL),
-(3, 1, 'Feyenoord', NULL, 1, '2017-05-04 11:08:12', NULL),
-(4, 1, 'Vitesse', NULL, 1, '2017-05-04 11:08:12', NULL),
-(5, 1, 'bla', 0, 1, '2017-05-30 15:15:12', NULL),
-(6, 1, 'NAC Breda', 0, 1, '2017-05-30 15:15:36', NULL),
-(23, 1, 'poul1', 0, 1, '2017-05-30 16:51:24', NULL),
-(24, 2, 'poul2', 0, 1, '2017-05-30 16:51:31', NULL),
-(25, 3, 'poul3', 0, 1, '2017-05-30 16:51:36', NULL),
-(26, 4, 'poul4', 0, 1, '2017-05-30 16:51:40', NULL);
+(1, 0, 'Free Agent', 0, 1, '2017-06-02 11:55:17', NULL),
+(39, 1, 'team', 0, 1, '2017-06-02 11:53:07', NULL),
+(40, 2, 't1p2', 0, 1, '2017-06-02 12:00:04', NULL),
+(41, 3, 't1p3', 0, 1, '2017-06-02 12:00:08', NULL),
+(42, 4, 't1p4', 0, 1, '2017-06-02 12:00:13', NULL),
+(43, 1, 't2p1', 0, 1, '2017-06-02 12:00:17', NULL),
+(44, 2, 't2p2', 0, 1, '2017-06-02 12:00:20', NULL),
+(45, 3, 't2p3', 0, 1, '2017-06-02 12:00:23', NULL),
+(46, 4, 't2p4', 0, 1, '2017-06-02 12:00:30', NULL),
+(47, 1, 't3p1', 0, 1, '2017-06-02 12:00:35', NULL),
+(48, 2, 't3p2', 0, 1, '2017-06-02 12:00:39', NULL),
+(49, 3, 't3p3', 0, 1, '2017-06-02 12:00:42', NULL),
+(50, 4, 't3p4', 0, 1, '2017-06-02 12:00:46', NULL),
+(51, 1, 't4p1', 0, 1, '2017-06-02 12:00:54', NULL),
+(52, 2, 't4p2', 0, 1, '2017-06-02 12:00:57', NULL),
+(53, 3, 't4p3', 0, 1, '2017-06-02 12:01:02', NULL),
+(54, 4, 't4p4', 0, 1, '2017-06-02 12:01:11', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `username`, `password`, `email`, `created_at`, `deleted_at`) VALUES
+(1, 'admin', 'password', '', '2017-06-01 07:12:20', NULL),
+(2, 'testtest', 'test', 'test@test.nl', '2017-06-12 11:13:58', NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -179,6 +229,12 @@ ALTER TABLE `tbl_teams`
   ADD UNIQUE KEY `name` (`teamname`);
 
 --
+-- Indexen voor tabel `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -186,12 +242,12 @@ ALTER TABLE `tbl_teams`
 -- AUTO_INCREMENT voor een tabel `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_players`
 --
 ALTER TABLE `tbl_players`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_poulenumber`
 --
@@ -206,7 +262,12 @@ ALTER TABLE `tbl_poules`
 -- AUTO_INCREMENT voor een tabel `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+--
+-- AUTO_INCREMENT voor een tabel `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
