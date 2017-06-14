@@ -137,6 +137,10 @@ textarea {
     padding-top: 300px;
     color: #7da36b;
 }
+.smalltainer {
+    width: 30%;
+    margin: 0 auto;
+}
 /*==============================header============================*/
 .header li{
     margin: 15px 10px;
@@ -298,6 +302,21 @@ footer ul{
 }
 .setup-items a:visited{
     color: #7da36b;
+}
+/*==============================schedule============================*/
+.schedule td {
+    width: 20%;
+}
+.schedule th {
+    width: 20%;
+}
+/*==============================playmatch============================*/
+.match {
+    background: #7da36b;
+    color: #FFFFFF;
+}
+.match p {
+    font-size: 4em;
 }
 /* ==========================================================================
    Helper classes

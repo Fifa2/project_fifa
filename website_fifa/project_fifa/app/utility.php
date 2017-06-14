@@ -112,9 +112,26 @@ class utility
             echo '<option value=' . $id . '>' . $firstname . $lastname  . '</option>';
         }
         echo "</select>";
+    }
 
+    function selectScorer($teamid)
+    {
+        global $db;
+        require_once '../app/database.php';
+        $sql = "SELECT * FROM tbl_players where team_id = $teamid";
+        $items = $db->query($sql)->fetchAll();
+        echo 'select class="form-control" name="scorer">';
+        foreach ($items as $item)
+        {
+            $id = $item['id'];
+            $firstname = $item['first_name'];
+            $lastname = $item['last_name'];
+            echo '<option value=' . $id . '>' . $firstname . $lastname  . '</option>';
+        }
+        echo "</select>";
 
     }
+
     function loginCheck()
     {
         if (!empty ($_SESSION['loggedIn'])){
