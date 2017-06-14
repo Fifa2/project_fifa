@@ -22,12 +22,13 @@ session_start();
 <div class="wrapper">
     <div class="header">
         <div class="space-around">
-            <h1>FIFA</h1>
+            <h1><a href="../public/home.php">FIFA</a></h1>
             <ul class="flex">
                 <li><a href="../public/home.php">Home</a></li>
                 <li><a href="#">Schedule</a></li>
                 <li><a href="../public/poules.php">Poules</a></li>
                 <li><a href="../admin/admin.php">Admin</a></li>
+                <li><a href="../public/setup.php">Setup</a></li>
                 <?php
                 if (!empty ($_SESSION['loggedIn'])){
                     echo '<li><a href="../app/logout.php">Logout</a></li>';

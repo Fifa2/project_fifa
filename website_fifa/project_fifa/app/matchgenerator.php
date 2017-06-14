@@ -3,7 +3,6 @@ require('../app/database.php');
 require('../app/matches.php');
 $matches = new \project_fifa\matches();
 
-
 function scheduler($teams){
     if (count($teams)%2 != 0){
         array_push($teams,0);
@@ -16,41 +15,36 @@ function scheduler($teams){
             $round[$i][$j]["Away"]=$away[$j];
         }
         if(count($home)+count($away)-1 > 2){
-            array_unshift($away,array_shift(array_splice($home,1,1)));
+            $test = array_splice($home, 1,1);
+            array_unshift($away,array_shift($test));
             array_push($home,array_pop($away));
         }
     }
     return $round;
 }
-$pouleid = 2;
-$sql = "SELECT id FROM tbl_teams WHERE poule_id = $pouleid";
-$poule =  $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-for ($i = 0; $i < count($poule) ; $i++)
-{
-    $teams[$i] = $poule[$i]['id'];
-}
-//var_dump($teams);
+for ($j = 0 ; $j < 4 ; $j++) {
 
 
-$members = array(1,2,3,4);
-$schedule = scheduler($teams);
-foreach($schedule AS $round => $games){
-//    var_dump($games);
-    foreach($games AS $play){
-//        var_dump($play);
-//
-        $id1 = $play["Home"];
-        $id2 = $play['Away'];
-        var_dump($id1);
+    $pouleid = $j;
+    $sql = "SELECT id FROM tbl_teams WHERE poule_id = $pouleid";
+    $poule = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    for ($i = 0; $i < count($poule); $i++) {
+        $teams[$i] = $poule[$i]['id'];
+    }
 
-        if ($id1 != '0' && $id2 != '0')
-        {
-            $matches->AddMatch($id1,$id2);
+
+    $members = array(1, 2, 3, 4);
+    $schedule = scheduler($teams);
+    foreach ($schedule AS $round => $games) {
+        foreach ($games AS $play) {
+
+            $id1 = $play["Home"];
+            $id2 = $play['Away'];
+
+            if ($id1 != '0' && $id2 != '0') {
+                $matches->AddMatch($id1, $id2);
+            }
         }
-
-
-//        var_dump($id1);
-
     }
 }
 
