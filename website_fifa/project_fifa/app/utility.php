@@ -90,11 +90,12 @@ class utility
             $teamname = $item['teamname'];
             $points = $item['points'];
             echo '<tr>
-                <td>' . $teamname .'</td>
+                <td><a href="../public/teams.php?id='. $id .'">' . $teamname .'</a></td>
                 <td>' . $points . '</td> </tr>';
         }
         echo "</table>";
     }
+
     function selectPlayer($playernumber)
     {
         global $db;
@@ -121,34 +122,32 @@ class utility
         }
 
     }
-    function displayTeam()
+    function displayTeam($teamid)
     {
         global $db;
         require_once '../app/database.php';
-        $sql = "SELECT tbl_players.id, tbl_players.first_name, tbl_players.last_name,tbl_teams.teamname, tbl_players.goals FROM tbl_players INNER JOIN tbl_teams ON tbl_players.team_id = tbl_teams.id";
+        $sql = "SELECT tbl_players.id, tbl_players.first_name, tbl_players.last_name,tbl_teams.teamname FROM tbl_players INNER JOIN tbl_teams ON tbl_players.team_id = tbl_teams.id WHERE tbl_players.team_id = $teamid";
         $items = $db->query($sql)->fetchAll();
-        foreach ($items as $item)
-        {
-            $teamname = $item['teamname'];
-            echo '<h1>' . $teamname . '</h1>';
-            echo"
+        $teamname = $items[0]['teamname'];
+        echo"
+        <h1>". $teamname . "</h1>
         <table class='table'>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Goals scored</th>
-                
             </tr>";
-
+        foreach ($items as $item)
+        {
             $id = $item['id'];
             $firstname = $item['first_name'];
             $lastname = $item['last_name'];
-            $goals = $item['goals'];
+            $teamname = $item['teamname'];
             echo '<tr>
                 <td>' . $firstname . '</td>
                 <td>' . $lastname .'</td>
-                <td>' . $goals . '</td> </tr>';
-            echo "</table>";
+                </tr>';
         }
-    }
+        echo "</table>";
+        }
+
 }
