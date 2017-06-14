@@ -1,5 +1,8 @@
 <?php require(realpath(__DIR__) . '/../templates/header.php');
 require ('../app/database.php');
+require('../app/utility.php');
+$utility = new \project_fifa\utility();
+$utility->loginCheck();
 echo "<div class=\"admin-panel pt\">
     <div class=\"container pt fill\">
         <ul>

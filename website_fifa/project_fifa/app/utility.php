@@ -134,7 +134,7 @@ class utility
 
     function loginCheck()
     {
-        if (!empty ($_SESSION['loggedIn'])){
+        if (empty ($_SESSION['loggedIn'])){
             header("Location: ../public/home.php");
         }
 

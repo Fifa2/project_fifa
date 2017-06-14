@@ -24,7 +24,7 @@ foreach ($items as $item) {
 
 
 ?>
-<div class="match">
+<div class="match fill">
     <div class="smalltainer center pt">
         <div class="score row-spaced">
             <div class="match-top center">

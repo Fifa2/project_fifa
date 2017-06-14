@@ -25,9 +25,8 @@ session_start();
             <h1><a href="../public/home.php">FIFA</a></h1>
             <ul class="flex">
                 <li><a href="../public/home.php">Home</a></li>
-                <li><a href="#">Schedule</a></li>
+                <li><a href="../public/schedule.php">Schedule</a></li>
                 <li><a href="../public/poules.php">Poules</a></li>
-                <li><a href="../admin/admin.php">Admin</a></li>
                 <li><a href="../public/setup.php">Setup</a></li>
                 <?php
                 if (!empty ($_SESSION['loggedIn'])){
