@@ -38,9 +38,22 @@ class matches
         $items = $db->query($sql)->fetchAll();
         foreach ($items as $item)
         {
-            var_dump($item);
-            $teamaid = $item[0];
-            var_dump($teamaid);
+            $teamidA = $item[0];
+            $teamnameA = $item[1];
+            $teamnameB = $item[2];
+            $teamidB = $item[3];
+
+            echo"
+            <table class='table'>
+                <tr>
+                    <th>Home</th>
+                    <th>Away</th>
+                </tr>";
+            echo '<tr>
+                <td>' . $teamnameA . '</td>
+                <td>' . $teamnameB .'</td> </tr>';
+
+
         }
 
     }

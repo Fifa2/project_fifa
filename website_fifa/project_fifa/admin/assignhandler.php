@@ -10,10 +10,10 @@ if ((isset($_POST['Team']) && !empty($_POST['Team'])) && (isset($_POST['1']) && 
 
     require_once '../app/database.php';
 
-    var_dump($teamid);
 
     foreach ($players as $player) {
         $sql = "UPDATE tbl_players SET team_id = $teamid where id = $player";
         $db->query($sql);
     }
+    header("Location: AssignTeams.php");
 }

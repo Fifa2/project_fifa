@@ -133,6 +133,10 @@ textarea {
     background: #7da36b;
     color: #FFFFFF;
 }
+.fill {
+    padding-top: 300px;
+    color: #7da36b;
+}
 /*==============================header============================*/
 .header li{
     margin: 15px 10px;
@@ -212,6 +216,7 @@ footer ul{
 /*==============================Admin============================*/
 .admin-panel{
     padding: 80px 0;
+    background: #7da36b;
 }
 /*==============================Addteamsbottom============================*/
 .pouledisplay{

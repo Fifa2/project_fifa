@@ -4,9 +4,9 @@ require('../app/utility.php');
 $utility = new \project_fifa\utility();
 ?>
 
-<div class="admin-panel">
+<div class="admin-panel pt">
     <div class="banner">
-        <div class="container">
+        <div class="container pt">
             <div class="form-group">
                 <form action="assignhandler.php" method="POST">
                     <p>Select A Team.</p>
